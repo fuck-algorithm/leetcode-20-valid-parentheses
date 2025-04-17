@@ -574,12 +574,6 @@ const Animation: React.FC = () => {
     return '正在解析字符串...';
   };
 
-  // 进度条拖动
-  const handleProgress = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setStepIdx(Number(e.target.value));
-    setPlaying(false);
-  };
-
   // 更新输入并计算步骤，但不自动播放
   const handleInputChange = (newInput: string) => {
     setInput(newInput);
@@ -595,10 +589,6 @@ const Animation: React.FC = () => {
     setPracticeHint(false);
   };
   
-  const showHint = () => {
-    setPracticeHint(true);
-  };
-
   // 页面底部的空白区域，为控制面板腾出空间
   const controlPanelHeight = 'min(120px, 18vh)';
 
