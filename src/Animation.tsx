@@ -1032,3 +1032,4 @@ const Animation: React.FC = () => {
 export default Animation;// 临时注释
 // 临时注释2：增强栈内括号显示
 // 临时注释3：改进括号类型描述
+// 临时注释4：禁用自动播放功能
