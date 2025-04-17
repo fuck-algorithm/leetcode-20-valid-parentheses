@@ -1,54 +1,98 @@
-# React + TypeScript + Vite
+# LeetCode 20 - 有效的括号动画演示
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="public/favicon.png" alt="Logo" width="80" height="80">
+  <br/>
+  <p align="center">
+    <a href="https://fuck-algorithm.github.io/leetcode-20-valid-parentheses/" target="_blank">在线演示</a> •
+    <a href="https://leetcode.cn/problems/valid-parentheses/" target="_blank">题目链接</a>
+  </p>
+</div>
 
-Currently, two official plugins are available:
+## 📚 项目介绍
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+这是一个用于直观展示 LeetCode 第 20 题「有效的括号」算法解题过程的交互式动画应用。通过可视化的方式，帮助开发者理解栈在处理括号匹配问题中的应用。
 
-## Expanding the ESLint configuration
+### 🔍 题目描述
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+给定一个只包括 `(`，`)`，`{`，`}`，`[`，`]` 的字符串，判断字符串是否有效。
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+有效字符串需满足：
+1. 左括号必须用相同类型的右括号闭合。
+2. 左括号必须以正确的顺序闭合。
+3. 每个右括号都有一个对应的左括号匹配。
+
+## ✨ 功能特点
+
+- 🖥️ **直观的动画演示**：通过动画展示括号匹配的过程
+- 🎮 **交互式控制**：可以手动控制动画播放、暂停、步进等
+- 📊 **栈操作可视化**：清晰展示栈的入栈、出栈操作
+- 🔄 **多种预设案例**：提供多种括号组合的案例
+- 🎲 **随机生成功能**：可随机生成有效/无效的括号组合
+- 📱 **响应式设计**：适配不同尺寸的屏幕
+
+## 🛠️ 技术栈
+
+- **框架**：React + TypeScript
+- **构建工具**：Vite
+- **样式**：CSS-in-JS
+- **部署**：GitHub Pages
+- **CI/CD**：GitHub Actions
+
+## 🚀 本地开发
+
+### 前置要求
+
+- Node.js (v14.0.0+)
+- npm 或 yarn
+
+### 安装依赖
+
+```bash
+npm install
+# 或
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 启动开发服务器
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
+# 或
+yarn dev
 ```
+
+启动后访问 http://localhost:5174
+
+### 构建生产版本
+
+```bash
+npm run build
+# 或
+yarn build
+```
+
+## 🔍 算法详解
+
+该项目通过栈结构实现括号匹配验证：
+
+1. 遍历字符串中的每个字符
+2. 如果是左括号，则入栈
+3. 如果是右括号，则与栈顶元素匹配
+   - 如果栈为空或不匹配，则字符串无效
+   - 如果匹配，则弹出栈顶元素
+4. 最后检查栈是否为空，为空则有效
+
+## 🤝 参与贡献
+
+欢迎提交 Pull Request 或创建 Issue。
+
+## 📄 许可证
+
+[MIT License](LICENSE)
+
+---
+
+<div align="center">
+  <sub>如果这个项目对你有帮助，请给它一个⭐️！</sub>
+</div>
