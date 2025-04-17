@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 
+// LeetCode 20. Valid Parentheses 动画演示组件
+
 const defaultInput = '([{}])';
 const errorInput = '([)]';
 const PAIRS: Record<string, string> = { ')': '(', ']': '[', '}': '{' };
